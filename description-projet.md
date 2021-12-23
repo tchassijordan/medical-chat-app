@@ -60,7 +60,7 @@ Num | Noms 			et prénoms | Matricule
 2 |   Miessok Eric Cedric Junior            | 18T2523
 3 | Kamta Blerio cabre  |  18t2731
 4 |  Jou Tchassi Idriss Jordan  |  18T2484
-5 |   |  
+5 |   Manpho ngueda murhiell |  21S2783
 
 
 <p align="justify" style="margin-bottom: 0.28cm; line-height: 108%"><br/>
