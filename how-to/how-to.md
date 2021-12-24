@@ -59,6 +59,7 @@ Ou bien ouvrez simplement un terminal (pour les utilisateur linux), ou le git ba
 ### Cree un remote repository
 
 __Note:__ Avant de continue assurez vous que vous aviez faire <u>_l'etape 4 de cloné le repository_ precedente.</u>
+Et aussi tout les commandes en-dessous doit etre fait dans le même espace de travail que _l'etape 4 de cloné le repository_ precedente
 
 1. __Qu'est ce qu'un remote?__
 <br>Un remote est just le lien vers l'endroit où le repository est stocke sur l'internet. Pour modifie un repository qu'est stocke sur l'internet il faut dit a git où ce fiche est stocke pour qu'il puis le modifie.  
@@ -91,7 +92,7 @@ Pour pouvoir modifie ce repository il faut cree une connexion entre git et GitHu
         <br> __``` ssh-add  ~/.ssh/id_ed25519 ```__
 
 3. #### Ajouter une nouvelle clé ssh à votre compte GitHub
-    1. Copiez la clé publique SSH dans votre presse-papiers.
+    1. Copiez la clé publique SSH dans votre clipboard.
         1. __Pour Windows__: pbcopy < ~/.ssh/id_ed25519.pub
 
         2. __Pour Linux__: cat  ~/.ssh/id_ed25519.pub
@@ -123,13 +124,13 @@ Pour pouvoir modifie ce repository il faut cree une connexion entre git et GitHu
 ### Recevoir le nouveau repository qui a ete mise a jour.
 Entrez les ligne de commande suivant sur le terminal 
 
-```git push origin nom_de_la_branch ```
+```git pull origin nom_de_la_branch ```
 
-Exemple: ```git push origin main ```
+Exemple: ```git pull origin main ```
 
 ### Envoye les mise a jour fait 
 Entrez les ligne de commande suivant sur le terminal 
 
-```git pull origin nom_de_la_branch ```
+```git push origin nom_de_la_branch ```
 
-Exemple: ```git pull origin main ```
+Exemple: ```git push origin main ```
