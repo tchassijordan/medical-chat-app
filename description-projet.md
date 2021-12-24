@@ -58,7 +58,7 @@ Num | Noms 			et prénoms | Matricule
 -- | -- | --
 1 |  Nzokeu Ngouanea Brice Guenole | 18T2415  
 2 |   Miessok Eric Cedric Junior            | 18T2523
-3 | Kamta Blerio cabre  |  18t2731
+3 | Kamta Blerio cabrel  |  18t2731
 4 |  Jou Tchassi Idriss Jordan  |  18T2484
 5 |   Manpho ngueda murhiell |  21S2783
 
