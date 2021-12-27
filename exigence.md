@@ -3,7 +3,7 @@
 - Le systeme doit pemettre qu'un utilisateur puis s'enregistre comme médecin 
 - Le systeme doit pemettre qu'un utilisateur puis s'enregistre comme patient 
 - L'utilisateur patient doit pouvoir effectuer une recherche dans tous l'ensemble des utilisateurs médecin. 
-- Tous les utilisateurs dovrons pouvoir effectuer des modification sur les profile, cest ta dit, modifier les informations personnel. 
+- Tous les utilisateurs dovrons pouvoir effectuer des modification sur les profile, cest a dit, modifier les informations personnel. 
 - Un utilisateur patient doit pouvoir laisse les remarque concernant un utilisateur médecin particuliere qu'il a deja eut a traiter avec lui. 
 - L'utilisateur patient et l'utilisateur médecin devrons pouvoir communique a travers la platforme. Il devrons pouvoir s'envoye les messages. 
 - Chaque message envoye est attribue un identifiant specifique.
