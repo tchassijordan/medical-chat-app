@@ -1,12 +1,15 @@
 :root {
     --dst-txt: 0.85rem;
+    --white-200: rgba(255, 251, 251, 0.938);
+    --white-250: rgba(201, 197, 197, 0.26);
     --white-300: rgba(201, 197, 197, 0.616);
+    --purple-200: rgba(97, 95, 228, 0.801);
     --purple-300: rgba(3, 2, 73, 0.76);
 }
 
 body {
     display: grid;
-    grid-template: 100% / 250px  1fr;
+    grid-template: minmax(100vh, auto)  / 15.625em  1fr;
     grid-template-areas: "header main";  
     font-family: 'Ubuntu', sans-serif;
     margin: 0;
@@ -35,11 +38,20 @@ header {
     background: var(--purple-300);
 }
 
+.nav-bar-container {
+    display: grid;
+}
+
 .logo {
     font-size: 2rem;
     color: white;
-    padding: 1em;
     letter-spacing: 2px;
+    text-align: center;
+    margin: 2em 0 1.75em;
+}
+
+.nav-bar {
+    align-self: center;
 }
 
 .nav-item {
@@ -53,11 +65,13 @@ header {
     letter-spacing: 1px;
 }
 
-.nav-item:hover {
+.nav-item:hover,
+.active {
     background: linear-gradient(to right, rgb(2, 171, 201) 5px, rgba(36, 35, 35, 0.37) 5px);
 }
 
-.nav-item:hover svg {
+.nav-item:hover svg,
+.active svg {
     color: rgba(209, 193, 255, 0.938);
 }
 
@@ -76,6 +90,7 @@ main {
     display: grid;
     grid-template: 20%  80% / 100%;
     grid-template-areas: "search-area" "content";
+    height: 100%;
 }
 
 
@@ -84,22 +99,124 @@ main {
 ----------------------- */
 .search-container {
     grid-area: search-area;
-    background: violet;
+    background: var(--white-250);
+    padding: 1.25em 5em;
 }
 
+.search-container.flex-row,
+.profile-area.flex-row,
+.profile-credentials.flex-row  {
+    align-items: center;
+}
 
+form {
+    border: 0.5px solid var(--white-300);
+    border-radius: 3.5px;
+    width: fit-content;
+    padding: 1em;
+}
+
+.input-name {
+    border: none;
+    border-radius: 5px;
+    padding: 1em;
+    width: 250px;
+    transition: all 300ms;
+    background-color: white;
+    margin-right: 1em;
+}
+
+.input-name:focus,
+.input-name:hover {
+    box-shadow: 0px 0px 2px 1px var(--white-300);
+}
+
+label {
+    margin: 0 1em;
+    letter-spacing: 1px;
+}
+
+.label-name {
+    margin-bottom: 0.5em;
+    font-size: var(--dst-txt);
+    font-weight: bold;
+}
+
+select {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    font-size: var(--dst-txt);
+}
+
+.btn {
+    background-color: var(--purple-200);
+    border: none;
+    border-radius: 5px;
+    padding: 1em 2em;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.btn:hover,
+.btn:focus {
+    box-shadow: 0px 0px 2px 0px black;
+}
+
+.submit-btn {
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-left: 1em;
+}
+
+.profile-area {
+    margin: 0 2em;
+}
+
+.profile-area-icons {
+    border-right: 1px solid var(--purple-200);
+    padding: 0 1em;
+}
+
+.profile-area-icons svg {
+    --dst-txt: 1.15rem;
+    margin-right: 0.5em;
+}
+
+.profile-area-icons svg:last-child {
+    margin-right: 0;
+}
+
+.profile-credentials {
+    padding: 0 1em;
+}
+
+.profile-credentials.flex-row {
+    column-gap: 1em;
+}
+
+.profile-name {
+    flex-grow: 0;
+}
+
+.profile-credentials img {
+    width: 50px;
+    height: 50px;
+}
 
 /* -------------
     CONTENT
 ----------------*/
 .content {
     grid-area: content;
-    background: rgba(255, 251, 251, 0.938);
-    padding: 2.5em 5em;
+    background: var(--white-200);
+    padding: 1.75em 5em;
 }
 
 .title {
     font-size: 1.75rem;
+    margin-top: 0;
 }
 
 .flex-col,
@@ -115,14 +232,20 @@ main {
     flex-direction: row;
 }
 
+.items-container.flex-row {
+    column-gap: 2em;
+    row-gap: 1em;
+    flex-wrap: wrap;
+}
+
 .item {
     background: white;
     padding: 1em;
     border-radius: 5px;
-    max-width: 400px;
     border: 1px solid var(--white-300);
     transition: all 300ms;
     cursor: pointer;
+    flex-basis: 40%;
 }
 
 .item:hover, 
@@ -150,6 +273,7 @@ main {
 .item-description {
     flex-basis: 75%;
     padding-left: 1em;
+    letter-spacing: 1px;
 }
 
 .item-title {
@@ -159,6 +283,12 @@ main {
 .item-address,
 .item-tel {
     font-size: var(--dst-txt);
+    opacity: 0.85;
+    margin-top: 0;
+}
+
+.item-address,
+.number {
     opacity: 0.85;
 }
 
@@ -184,8 +314,15 @@ main {
 .item-icon svg {
     --dst-txt: 0.9rem;
     transition: 300ms;
+    opacity: 0.85;
 }
 
 .item-icon:hover svg {
     color: var(--purple-300);
+}
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 16px;
+    }
 }
