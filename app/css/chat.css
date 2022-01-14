@@ -321,6 +321,17 @@ select {
     color: var(--purple-300);
 }
 
+
+/* -----------------------------
+    PATIENT CHAT MESSAGE AREA
+--------------------------------- */
+.message-container {
+    max-width: 700px;
+    height: 500px;
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px black;
+}
+
 @media (max-width: 1000px) {
     html {
         font-size: 16px;
