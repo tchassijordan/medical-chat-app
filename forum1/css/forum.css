@@ -15,7 +15,7 @@
 /* TOPICS SELECTION STYLES */
 
 .choose-topic {
-    display: none;
+    display: block;
 }
 
 .topic {
@@ -38,7 +38,7 @@
 /* IN A CATEGORY STYLES */
 
 .in-categorie {
-    display: none;
+    display: block;
 }
 
 .add-cat-subject {
