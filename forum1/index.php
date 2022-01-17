@@ -160,15 +160,19 @@ if (!isset($_SESSION['id'])) {
                 } else {
                     /*Si on est sur la page normal*/
                     $requete = $bdd->query('SELECT * FROM categories');
-                    while ($reponse = $requete->fetch()) {
-                    ?>
-                        <div class="choose-topic">
-                            <h1 class="title">Topics</h1>
-                            <div class="topics-container">
-                                <a href="index.php?categorie=<?php echo $reponse['name']; ?>" class="topic"><?php echo $reponse['name']; ?> <span class="left-arrow">&#8594;</span></a>
-                            </div>
+                    ?> 
+                    <div class="choose-topic">
+                        <h1 class="title">Topics</h1>
+                        <div class="topics-container">
+                            <?php
+                                while ($reponse = $requete->fetch()) {
+                                ?>
+                                    <a href="index.php?categorie=<?php echo $reponse['name']; ?>" class="topic"><?php echo $reponse['name']; ?> <span class="left-arrow">&#8594;</span></a>
+                                <?php
+                            ?>
                         </div>
-                <?php
+                    </div>
+                    <?php
                     }
                 }
                 ?>
