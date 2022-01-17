@@ -89,22 +89,22 @@ if (!isset($_SESSION['id'])) {
                     $_GET['categorie'] = htmlspecialchars($_GET['categorie']);
                 ?>
 					<div class="in-categorie flex-col">
-						<h1 class="title"><?php echo $_GET['categorie']; ?></h1>
-						<a href="addSujet.php?categorie=<?php echo $_GET['categorie']; ?>" class="add-cat-subject">Ajouter un sujet <span class="left-arrow">&#8594;</span></a>
-						<h3 class="title-prev">Sujet Precedent</h3>
-						<?php
-						$requete = $bdd->prepare('SELECT * FROM sujet WHERE categorie = :categorie ');
-						$requete->execute(array('categorie' => $_GET['categorie']));
-						?>
-						<div class="topics-container flex-row">
-							<?php
-							while ($reponse = $requete->fetch()) {
-							?>
-								<a href="index.php?sujet=<?php echo $reponse['name'] ?>" class="topic cat-topic"><?php echo $reponse['name'] ?> <span class="left-arrow">&#8594;</span></a>
-							<?php
-							}
-							?>
-						</div>
+                    <h1 class="title"><?php echo $_GET['categorie']; ?></h1>
+                    <a href="addSujet.php?categorie=<?php echo $_GET['categorie']; ?>" class="add-cat-subject">Ajouter un sujet <span class="left-arrow">&#8594;</span></a>
+                    <h3 class="title-prev">Sujet Precedent</h3>
+                    <?php
+                    $requete = $bdd->prepare('SELECT * FROM sujet WHERE categorie = :categorie ');
+                    $requete->execute(array('categorie' => $_GET['categorie']));
+                    ?>
+                    <div class="topics-container flex-row">
+                        <?php
+                        while ($reponse = $requete->fetch()) {
+                        ?>
+                            <a href="index.php?sujet=<?php echo $reponse['name'] ?>" class="topic cat-topic"><?php echo $reponse['name'] ?> <span class="left-arrow">&#8594;</span></a>
+                        <?php
+                        }
+                        ?>
+                    </div>
 					</div>
                     <?php
                     while ($reponse = $requete->fetch()) {

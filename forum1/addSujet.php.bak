@@ -99,7 +99,7 @@ if (isset($_POST['name']) and isset($_POST['sujet'])) {
                 }
                 ?>
             </form>
-            <a class="back-pg-arrow" href="index.php">&#8592; Back</a>
+            <a class="back-pg-arrow" href="forum.php">&#8592; Back</a>
         </div>
     </main>
 </body>
