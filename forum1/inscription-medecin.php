@@ -39,9 +39,9 @@ if(isset($_POST['pseudo']) AND isset($_POST['email']) AND isset($_POST['mdp'])  
         <div id="Cforum" class="flex-col">
             <h1 class="title">MedApp - Inscription</h1>
             <p class="section-description" id="section-description">veuillez vous connecter ou créez un nouveau compte</p>
-            <div class="ins-section inscription-patient"> 
-                <form class="flex-col" action="inscription.php" method="POST">
-                    <input class="form-item input-item" type="text" name="nom-patient" placeholder="Nom et prenom">
+            <div  class="ins-section inscription-medecin"> 
+                <form class="flex-col" action="../app/chat.html" method="POST">
+                    <input class="form-item input-item" type="text" name="nom-medecin" placeholder="Nom et prenom">
                     <input class="form-item input-item" type="text" name="pseudo" placeholder="Username">
                     <input class="form-item input-item" type="email" name="email"  placeholder="Email" required /><br>
                     <div class="form-item flex-row">
@@ -49,17 +49,13 @@ if(isset($_POST['pseudo']) AND isset($_POST['email']) AND isset($_POST['mdp'])  
                         <span><input class="input-item" type="radio" name="sexe" value="masculin"><span> Masculin</span></span> 
                         <span><input class="input-item" type="radio" name="sexe" value="feminin"><span> Feminin</span></span>     
                     </div>
-                    <input class="form-item input-item" type="text" name="ville-patient" placeholder="Ville">
-                    <input class="form-item input-item" type="text" name="quartier-patient" placeholder="Quartier">
-                    <input class="form-item input-item" type="tel" name="telephone-patient" placeholder="Telephone">
-                    <input class="form-item input-item" type="mdp" name="password" placeholder="Mot de passe">
-                    <input class="form-item input-item" type="mdp2" name="confirm-password" placeholder="Comfirmer mot de passe">
-                    <input class="btn submit-btn form-item" type="submit" value="inscription">
-                    <?php 
-                        if(isset($erreur)){
-                            echo $erreur;
-                        }
-                    ?>
+                    <input class="form-item input-item" type="text" name="ville-medecin" placeholder="Ville">
+                    <input class="form-item input-item" type="text" name="quartier-medecin" placeholder="Quartier">
+                    <input class="form-item input-item" type="text" name="centreDeSante" placeholder="Centre de sante">
+                    <input class="form-item input-item" type="tel" name="telephone-medecin" placeholder="Telephone">
+                    <input class="form-item input-item" type="password" name="mdp" placeholder="Mot de passe">
+                    <input class="form-item input-item" type="password" name="mdp2" placeholder="Comfirmer mot de passe">
+                    <input class="btn submit-btn form-item" type="submit" value="inscription" id="btnSubmissionInscriptionMed">
                 </form>
                 <a href="connexion.php" class="link">avez vous déjà un compte? Se connecter</a>
             </div>
