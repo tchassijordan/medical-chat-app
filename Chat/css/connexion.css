@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --white-250: rgba(201, 197, 197, 0.26);
+    --white-300: rgba(201, 197, 197, 0.616);
+    --purple-200: rgba(3, 2, 73, 0.904);
+    --purple-300: rgb(3, 2, 73);
+}
+
+body {
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+main {
+    display: flex;
+    height: 100vh;
+}
+
+/* -----------------
+    UTILITY AREA
+-------------------- */
+
+.flex-col,
+.flex-row {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-row {
+    flex-direction: row;
+    gap: 1em;
+}
+
+.btn {
+    border: 1px solid var(--white-300);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 300ms;
+    color: white;
+    font-weight: 700;
+    background-color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn:hover,
+.btn:focus {
+    box-shadow: 0px 0px 2px 0px black;
+}
+
+.title {
+    margin: 0 0 0.35em;
+}
+
+.img-section {
+    flex-basis: 50%;
+}
+
+.log-in-img {
+    width: 100%;
+    height: 100%;
+}
+
+#Cforum {
+    flex-basis: 50%;
+}
+
+.log-in-form {
+    margin-bottom: 1em;
+}
+
+.form-item {
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid var(--white-300);
+    padding: 1em;
+    letter-spacing: 0.75px;
+    margin-bottom: 2em;
+}
+
+.input-item {
+    outline: none;
+    transition: all 300ms;
+}
+
+.input-item:focus {
+    border-bottom-color: var(--purple-300);
+}
+
+.submit-btn {
+    background-color: var(--purple-300);
+}
+
+.section-description {
+    color: rgba(0, 0, 0, 0.548);
+    margin: 0 0 2em;
+}
+
+.no-bg-btn {
+    color: var(--purple-300);
+    border: 1px solid var(--white-300);
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.ins-section {
+    display: block;
+}
+
+.ins-section .form-item {
+    margin-bottom: 1.5em;
+    padding-top: 0;
+}
+
+.ins-section .btn {
+    padding-top: 1em;
+}
+
+span {
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.753);
+}
+
