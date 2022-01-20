@@ -44,7 +44,7 @@ if (isset($_POST['name']) and isset($_POST['sujet'])) {
                         </svg> chat</a>
                 </li>
                 <li class="active">
-                    <a href="forum.html" class="nav-item"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user-group" class="svg-inline--fa fa-user-group" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                    <a href="index.php" class="nav-item"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user-group" class="svg-inline--fa fa-user-group" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                             <path fill="currentColor" d="M224 256c70.7 0 128-57.31 128-128S294.7 0 224 0C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3c-95.73 0-173.3 77.6-173.3 173.3C0 496.5 15.52 512 34.66 512H413.3C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304zM479.1 320h-73.85C451.2 357.7 480 414.1 480 477.3C480 490.1 476.2 501.9 470 512h138C625.7 512 640 497.6 640 479.1C640 391.6 568.4 320 479.1 320zM432 256C493.9 256 544 205.9 544 144S493.9 32 432 32c-25.11 0-48.04 8.555-66.72 22.51C376.8 76.63 384 101.4 384 128c0 35.52-11.93 68.14-31.59 94.71C372.7 243.2 400.8 256 432 256z"></path>
                         </svg> forum</a>
                 </li>
@@ -86,13 +86,13 @@ if (isset($_POST['name']) and isset($_POST['sujet'])) {
     <main>
         <div class="container">
             <h1 class="title">Ajouter un nouveau sujet</h1>
-            <form action="addSujet.php?categorie=<?php echo $_GET['categorie']; ?>" class="subject-form">
-                <label for="subject name">Nom Sujet: </label>
-                <input type="text" class="subject-name" placeholder="Entrer le nom du sujet..." name="subject name" id="subjectName">
+            <form method="post" action="addSujet.php?categorie=<?php echo $_GET['categorie']; ?>" class="subject-form">
+                <label for="subject" name="name">Nom Sujet: </label>
+               	<input type="text" name="name" class="subject-name" placeholder="Nom du sujet..." required/>
                 <label for="subject name">Description Sujet: </label>
-                <textarea class="input-msg subject-msg" name="subject-msg" id="subject-msg" cols="30" rows="6" placeholder="Decrivez votre probleme"></textarea>
+                <textarea name="sujet" class="input-msg subject-msg" cols="30" rows="6"  placeholder="Contenu du sujet..."></textarea>
                 <input type="hidden" value="<?php echo $_GET['categorie']; ?>" name="categorie" />
-                <button type="submit" class="btn send-msg-btn add-subject-btn">Send</button>
+                <input type="submit" class="btn send-msg-btn add-subject-btn" value="Ajouter le sujet" />
                 <?php
                 if (isset($erreur)) {
                     echo $erreur;
